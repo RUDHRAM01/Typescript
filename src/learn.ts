@@ -29,7 +29,7 @@
 
 // // explicit type
 // let char: string
-// let num: number                                                                                                             
+// let num: number
 // let isBoolean: boolean
 
 // //array
@@ -134,3 +134,35 @@
 
 //     constructor(readonly client: string, private details: string, public amount: number){}
 // }
+
+
+//generics
+const addId = <T extends {name: string}>(obj: T) => {
+    let id = Math.floor(Math.random() * 100);
+    return { ...obj, id };
+}
+
+let k = addId({ name: 'rudhram', age: 21 })
+console.log(k)
+
+
+
+enum ResourceType {one,two,three,four}
+interface makeOne<T> {
+    uid: number,
+    resourceType: number,
+    data: T
+}
+
+let gen1: makeOne<string> = {
+    uid: 32342,
+    resourceType: ResourceType.two,
+    data:"fds"
+}
+
+
+// tuple and array
+
+let arr = [1, "hello", true];
+
+let tup: [string, number, boolean] = ["hello", 23, true];

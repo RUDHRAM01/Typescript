@@ -23,7 +23,7 @@
 // import { Invoice } from "./classes/Invoice";
 // // explicit type
 // let char: string
-// let num: number                                                                                                             
+// let num: number
 // let isBoolean: boolean
 // //array
 // let arr1: string[] = [];
@@ -91,3 +91,25 @@
 //     // public amount: number
 //     constructor(readonly client: string, private details: string, public amount: number){}
 // }
+//generics
+const addId = (obj) => {
+    let id = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { id });
+};
+let k = addId({ name: 'rudhram', age: 21 });
+console.log(k);
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["one"] = 0] = "one";
+    ResourceType[ResourceType["two"] = 1] = "two";
+    ResourceType[ResourceType["three"] = 2] = "three";
+    ResourceType[ResourceType["four"] = 3] = "four";
+})(ResourceType || (ResourceType = {}));
+let gen1 = {
+    uid: 32342,
+    resourceType: ResourceType.two,
+    data: "fds"
+};
+// tuple and array
+let arr = [1, "hello", true];
+let tup = ["hello", 23, true];
